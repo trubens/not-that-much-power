@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <style>
+        body {
+            font-family: monospace;
+            background-color: #000;
+            color: #3dce3d;
+            font-size: 18px;
+            padding: 30px;
+        }
+            
+        @keyframes blink {
+            from {
+                opacity: 1.0;
+            }
+            to {
+                opacity: 0.0;
+            }
+        }
+            
+        .blink {
+            animation-name: blink;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+            animation-duration: 1s;
+        }
+        </style>
+    </head>
+    <body onclick="n()">
+        <div id="output"></div>
+        <script src="Presentation/lib/q.min.js"></script>
+        <script src="Presentation/Output.js"></script>
+        <script src="Presentation/Utils.js"></script>
+        <script src="Presentation/FontGenerator.js"></script>
+        <script src="Presentation/SlideFetcher.js"></script>
+        <script src="Presentation/SlideRenderer.js"></script>
+        <script src="Presentation/Presentation.js"></script>
+        <script>
+        present = ((Presentation) => {
+            var presentation = new Presentation(document.getElementById('output'));
+            
+            presentation.addSlide('welcome');
+            presentation.addSlide('weirdo');
+            presentation.addSlide('historie');
+            presentation.addSlide('ecmahistorie');
+            presentation.addSlide('ecmascript6');
+            
+            return presentation;
+        })(presentation.Presentation);
+        present.start();
+        </script>
+    </body>
+</html>
