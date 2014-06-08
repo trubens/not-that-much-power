@@ -32,7 +32,7 @@
         }
         </style>
     </head>
-    <body onclick="n()">
+    <body>
         <div id="output"></div>
         <script src="Presentation/lib/q.min.js"></script>
         <script src="Presentation/Output.js"></script>
@@ -49,10 +49,14 @@
             presentation.addSlide('weirdo');
             presentation.addSlide('historie');
             presentation.addSlide('ecmahistorie');
-            presentation.addSlide('ecmascript6');
+            presentation.addSlide('lambda');
+            presentation.addSlide('let');
+            presentation.addSlide('promises');
+            presentation.addSlide('forof');
             
             return presentation;
         })(presentation.Presentation);
+            
         present.start();
         </script>
     </body>

@@ -1,0 +1,11 @@
+!For-of
+
+var ansatte = ['Anders', 'Katja', 'Pål'];
+for(var navn in ansatte) {
+    console.log(navn);
+}
+-
+var ansatte = ['Anders', 'Katja', 'Pål'];
+for(var navn of ansatte) {
+    console.log(navn);
+}

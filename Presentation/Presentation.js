@@ -13,13 +13,15 @@ presentation.Presentation = (function(SlideFetcher, SlideRenderer, Utils, Output
             currentSlideNumber = -1,
             output = new Output(outputElement);
         
-        window.o = output.print;
-        
         self.gotoSlide = number => {
+            console.log('Going to slide ' + number);
             output.clearOutput();
             
-            if(number >= slides.length) {
+            if(number === slides.length) {
                 output.print('Slidedeck finished....');
+            }
+            else if(number >= slides.length + 1) {
+                self.gotoSlide(0);
             }
             else {
                 currentSlideNumber = number;
@@ -38,11 +40,13 @@ presentation.Presentation = (function(SlideFetcher, SlideRenderer, Utils, Output
         };
         
         self.start = () => {
-            output.print('Welcome to the NotSoMuchPowerPoint!');
+            output.print('**Welcome to the NotSoMuchPowerPoint!**');
             output.print('');
-            output.print('Please write <enter> or write n() to proceed!');
+            output.print('Please write &lt;enter&gt; or write n() to proceed!');
             
             Utils.makeGlobal('n', self.next);
+            Utils.makeGlobal('o', msg => Output.print('> ' + msg));
+            Utils.makeGlobal('g', self.gotoSlide);
             Utils.createShortcut(13, self.next);
         };
         

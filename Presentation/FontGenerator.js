@@ -119,11 +119,11 @@ window.presentation.FontGenerator = (function() {
                  '   #',
                  '### '];
     
-    font['t'] = ['### ',
-                 ' #  ',
-                 ' #  ',
-                 ' #  ',
-                 ' #  '];
+    font['t'] = ['###',
+                 ' # ',
+                 ' # ',
+                 ' # ',
+                 ' # '];
     
     font['u'] = ['#  #',
                  '#  #',
@@ -208,6 +208,19 @@ window.presentation.FontGenerator = (function() {
                  '  #  ',
                  ' #   ',
                  '#    '];
+    
+    font['-'] = ['   ',
+                 '   ',
+                 '###',
+                 '   ',
+                 '   '];
+    
+    font['λ'] = 
+                [' ##   ',
+                 '   #  ',
+                 '  ##  ',
+                 ' #  # ',
+                 '#    #'];
     
     function generate(text, character = '&#9608;') {
         var output = ['','','','',''],
